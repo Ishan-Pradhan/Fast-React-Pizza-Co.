@@ -114,7 +114,10 @@ function Pizza({ pizzaObj }) {
 
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
-      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+      <img
+        src={`./Fast-React-Pizza-Co./${pizzaObj.photoName}`}
+        alt={pizzaObj.name}
+      />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
@@ -130,7 +133,7 @@ function Footer() {
   const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
+
   // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
   // else alert("Sorry we're closed");
   return (
@@ -140,7 +143,8 @@ function Footer() {
         <Order closeHour={closeHour} openHour={openHour} />
       ) : (
         <p>
-          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+          We're very happy to welcome you between {openHour}:00 and {closeHour}
+          :00.
         </p>
       )}
     </footer>
@@ -153,7 +157,7 @@ function Order({ closeHour, openHour }) {
     <div className="order">
       <p>
         We're open from {openHour}:00 until {closeHour}:00. Come visit us or
-        order online.
+        order online for your pizza🍕.
       </p>
       <button className="btn">Order</button>
     </div>
